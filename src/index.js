@@ -46,7 +46,7 @@ function decode(expr) {
     
     arr.forEach((elem) => {
       let letter = '';
-      for(let i = 0; i < arr.length; i+=2) {
+      for(let i = 0; i < elem.length; i+=2) {
         
       elem.slice(i, i + 2) === '10' ? letter += '.' : null;
       elem.slice(i, i + 2) === '11' ? letter += '-' : null;
