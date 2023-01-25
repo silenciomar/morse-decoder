@@ -35,6 +35,7 @@ const MORSE_TABLE = {
     '---..':  '8',
     '----.':  '9',
     '-----':  '0',
+    ' ': ' '
 };
 
 function decode(expr) {
@@ -46,12 +47,12 @@ function decode(expr) {
     
     arr.forEach((elem) => {
       let letter = '';
+      elem === '**********' ? letter += ' ' : null;
       for(let i = 0; i < elem.length; i+=2) {
         
       elem.slice(i, i + 2) === '10' ? letter += '.' : null;
       elem.slice(i, i + 2) === '11' ? letter += '-' : null;
       }
-      elem === '**********' ? letter += ' ' : null;
       newArr.push(MORSE_TABLE[letter])
     })
     return newArr.join('')
